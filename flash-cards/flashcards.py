@@ -2,7 +2,11 @@ import json
 
 with open('me-capitals.json', 'r') as f:
     data = json.load(f)
-    print(data)
 
 for i in data["cards"]:
-    print(i)
+    guess = input(i["q"] + ">")
+    
+    if guess == i["a"]:
+        print("Correct!")
+    else:
+        print("Incorrect! The correct answer was", i["a"]) 
